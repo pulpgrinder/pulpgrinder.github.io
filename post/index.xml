@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Fronkenblog</title>
+    <link>http://pulpgrinder.github.io/post/</link>
+    <description>Recent content in Posts on Fronkenblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Anthony W. Hursh</copyright>
+    <lastBuildDate>Wed, 30 Dec 2020 08:44:48 -0900</lastBuildDate><atom:link href="http://pulpgrinder.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>http://pulpgrinder.github.io/post/my-first-post/</link>
+      <pubDate>Wed, 30 Dec 2020 08:44:48 -0900</pubDate>
+      
+      <guid>http://pulpgrinder.github.io/post/my-first-post/</guid>
+      <description>Hello, world!</description>
+    </item>
+    
+  </channel>
+</rss>

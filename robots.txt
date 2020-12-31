@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://pulpgrinder.github.io/sitemap.xml

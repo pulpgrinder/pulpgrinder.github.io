@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fronkenblog</title>
+    <link>http://pulpgrinder.github.io/</link>
+    <description>Recent content on Fronkenblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Anthony W. Hursh</copyright>
+    <lastBuildDate>Wed, 30 Dec 2020 08:44:48 -0900</lastBuildDate>
+    
+        <atom:link href="http://pulpgrinder.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>http://pulpgrinder.github.io/about/</link>
+      <pubDate>Wed, 30 Dec 2020 08:44:48 -0900</pubDate>
+      
+      <guid>http://pulpgrinder.github.io/about/</guid>
+      
+        <description>&lt;p&gt;Fronkensteen is a self-contained, fully-programmable system for building apps using a wiki-like model. Everything is in one HTML file, which will work in any full-featured modern browser. Get it here: &lt;a href=&#34;http://pulpgrinder.github.io/fronkensteen.html&#34;&gt;http://pulpgrinder.github.io/fronkensteen.html&lt;/a&gt; Or you can find the source here: &lt;a href=&#34;https://github.com/pulpgrinder/Fronkensteen&#34;&gt;https://github.com/pulpgrinder/Fronkensteen&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://pulpgrinder.github.io/post/my-first-post/</link>
+      <pubDate>Wed, 30 Dec 2020 08:44:48 -0900</pubDate>
+      
+      <guid>http://pulpgrinder.github.io/post/my-first-post/</guid>
+      
+        <description>&lt;p&gt;Hello, world!&lt;/p&gt;
+</description>
+      
+    </item>
+    
+  </channel>
+</rss>
