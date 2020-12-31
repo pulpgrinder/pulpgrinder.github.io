@@ -1,6 +1,6 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v0.95-build_12').then(function(cache) {
+    caches.open('v0.95-build_13').then(function(cache) {
       return cache.addAll([
         'fronkensteen.html'
       ]);
@@ -20,7 +20,8 @@ self.addEventListener('fetch', function(event) {
         // we need to save clone to put one copy in cache
         // and serve second one
         let responseClone = response.clone();
-        caches.open('v0.95-build_12').then(function (cache) {
+
+        caches.open('v0.95-build_13').then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
@@ -38,12 +39,11 @@ self.addEventListener("activate", event => {
     caches.keys().then (cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName !== 'v0.95-build_12'){
+          if (cacheName !== 'v0.95-build_13'){
             console.log("deleting old cache: " + cacheName)
             return caches.delete(cacheName);
           }
         });
       );
     }));
-  });
-*/
+  }); */
