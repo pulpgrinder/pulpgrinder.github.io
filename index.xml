@@ -44,9 +44,9 @@
       
       <guid>http://pulpgrinder.github.io/post/my-first-post/</guid>
       
-        <description>&lt;p&gt;&lt;a href=&#34;http://pulpgrinder.github.io/dist/fronkensteen.html&#34;&gt;Get Fronkensteen&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Fronkensteen is a self-contained, single-file, fully-programmable wiki-like environment that works in any full-featured modern browser (i.e., just about everything other than Internet Explorer or pre-Chrome Edge). You can write and execute apps without any external resources at all. No toolchain. No server. No external editor. The entire system is contained in a single HTML file which can be opened in a browser from the local file system, put on a standard web server, embedded in a native wrapper (such as Electron or Cordova). It can be installed as a standalone web app from browsers that support this (currently mobile Safari, desktop and mobile Chrome, desktop Brave, and the new Chromium-based Microsoft Edge).&lt;/p&gt;
+        <description>&lt;p&gt;Fronkensteen is a self-contained, single-file, fully-programmable wiki-like environment that works in any full-featured modern browser (i.e., just about everything other than Internet Explorer or pre-Chrome Edge). You can write and execute apps without any external resources at all. No toolchain. No server. No external editor. The entire system is contained in a single HTML file which can be opened in a browser from the local file system, put on a standard web server, embedded in a native wrapper (such as Electron or Cordova). It can be installed as a standalone web app from browsers that support this (currently mobile Safari, desktop and mobile Chrome, desktop Brave, and the new Chromium-based Microsoft Edge).&lt;/p&gt;
 &lt;p&gt;The system is fully scriptable in both Scheme and JavaScript.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://pulpgrinder.github.io/dist/fronkensteen.html&#34;&gt;Get Fronkensteen&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>
