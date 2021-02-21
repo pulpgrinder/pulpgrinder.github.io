@@ -1,6 +1,6 @@
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('v0.95-1568').then(function(cache) {
+    caches.open('v0.95-1585').then(function(cache) {
       return cache.addAll([
         './fronkensteen_launcher.html',
         './apple-touch-icon.png',
@@ -19,7 +19,7 @@ self.addEventListener('fetch', function(event) {
     } else {
       return fetch(event.request).then(function (response) {
         let responseClone = response.clone();
-        caches.open('v0.95-1568').then(function (cache) {
+        caches.open('v0.95-1585').then(function (cache) {
           cache.put(event.request, responseClone);
         });
         return response;
@@ -34,7 +34,7 @@ self.addEventListener("activate", event => {
     caches.keys().then (cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName !== 'v0.95-1568'){
+          if (cacheName !== 'v0.95-1585'){
             return caches.delete(cacheName);
           }
         })
