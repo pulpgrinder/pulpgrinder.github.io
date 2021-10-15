@@ -14,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "./fronkensteen_launcher.html?version=0.95-3131",
+  "start_url": "./fronkensteen_launcher.html?version=0.95-3132",
   "background_color": "#3367D6",
   "display": "standalone",
   "scope": "./",
