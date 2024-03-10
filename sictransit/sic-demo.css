@@ -1,0 +1,184 @@
+@font-face {
+    font-family: Bocklin;
+    src: url(fonts/Bocklin.ttf);
+  }
+
+body{
+    height:100vh;
+    width:100vw;
+    padding:0;
+    margin:0;
+    background-color: gray;
+    overflow:hidden;
+}
+p > code {
+    font-weight:bold;
+}
+#mainscreen{
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+}
+
+#docwrapper{
+    width:100vw;
+    height:100vh;
+    padding:0;
+    overflow:scroll;
+    position:relative;
+}
+#docs{
+    font-family: serif;
+    max-width:60em;
+    padding:1em;
+    word-wrap:break-word;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:white;
+    overflow:scroll;
+}
+
+#docs img{
+    max-width:100%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+ }
+
+#demodiv{
+    display:none;
+    padding:0;
+    margin:0;
+    grid-template-rows: 3em 1fr;
+    background-color:black;
+    height:100vh;
+    width:100vw;
+    overflow:hidden;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#democontrols{
+    padding:1em
+}
+
+    .sic-transit-topmenupanel .sic-transit-menuitem , .sic-transit-bottommenupanel .sic-transit-menuitem {
+        border-left:1px solid black;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        background-color:lightgray;
+        color:black;
+        margin-left:-3px;
+        margin-right:-3px;
+    }
+        
+    .sic-transit-topmenupanel .sic-transit-menucontainer :first-child, .sic-transit-bottommenupanel .sic-transit-menucontainer :first-child{
+        border-top: 1px solid black;
+        border-top-left-radius :10px;
+        border-bottom-left-radius :10px;
+    }
+    .sic-transit-topmenupanel .sic-transit-menucontainer :last-child, .sic-transit-bottommenupanel .sic-transit-menucontainer :last-child{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color:lightgray;
+        color:black;
+    }
+
+ .sic-transit-rightmenupanel .sic-transit-menuitem , .sic-transit-leftmenupanel .sic-transit-menuitem {
+    border-left:1px solid black;
+    border-right:1px solid black;
+    border-bottom: 1px solid black;
+    background-color:lightgray;
+    color:black;
+}
+
+
+.sic-transit-rightmenupanel .sic-transit-menucontainer :first-child, .sic-transit-leftmenupanel .sic-transit-menucontainer :first-child{
+    border-top: 1px solid black;
+    border-top-left-radius :10px;
+    border-top-right-radius :10px;
+}
+.sic-transit-rightmenupanel .sic-transit-menucontainer :last-child, .sic-transit-leftmenupanel .sic-transit-menucontainer :last-child{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color:lightgray;
+    color:black;
+}
+
+.demoresult{
+    font-style:italic;
+    padding:0.5em;
+    margin:0;
+    background-color:lightgray;
+    color:darkgreen;
+    min-height:1em;
+    word-wrap:break-word;
+    overflow:auto;
+}
+
+pre{
+    margin-bottom:0;
+}
+
+code {
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+.language-javascript{
+    width:100%;
+    font-size:125%;
+    margin:auto;
+    background-color: black;
+    color:lightgreen;
+    display:block;
+    box-sizing:border-box;
+    padding:0.5em;
+    
+}
+#democontainer {
+    padding:0;
+    margin-left:auto;
+    margin-right: auto;
+    height: auto;
+    width: 100%;
+ }
+ 
+ .demopanel{
+    font-family: "Bocklin";
+    margin:0;
+    padding:0.5em;
+    height:100%;
+    width:100%;
+    overflow:auto
+ }
+
+ .demopanel img{
+    max-width:100%;
+    max-height:80%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+ }
+
+ #panel1 {
+    background-color: #a2d5c6;
+}
+
+#panel2 {
+    background-color: #fce5cd;
+}
+
+#panel3 {
+    background-color: #fff2cc;
+}
+
+#panel4 {
+    background-color: #d9ead3;
+}
+
+

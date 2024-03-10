@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- SicTransit Demo. Copyright 2024 by Anthony W. Hursh. MIT license -->
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store,must-revalidate,max-age=-1">
+    <meta http-equiv="Pragma" content="no-store">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="dist/sic-transit.css">
+    <link rel="stylesheet" href="sic-demo.css">
+    <script type="text/javascript" src="dist/sic-transit.js"></script>
+    <script type="text/javascript" src="vendor/markdown-it.min.js"></script>
+    <title>SicTransit Demo</title>
+  </head>
+  <body>
+    <div id="mainscreen">
+      <div id="demodiv">
+        <div id="democontrols"><button id="codebutton" onclick="runCode()" index = 0;>Run Demo</button> <button id="returnbutton" onclick="returnToDocs()">Return to Docs</button></div>
+        <div id="democontainer">
+          <div id="menupaneltest" class="demopanel">
+            <div class="sic-transit-menucontainer">
+              <div class="sic-transit-menuitem">
+                Menu Item 1
+              </div>
+              <div class="sic-transit-menuitem">
+                Menu Item 2
+              </div>
+              <div class="sic-transit-menuitem">
+                Menu Item 3
+              </div>
+              <div class="sic-transit-menuitem">
+                Menu Item 4
+              </div>
+            </div>
+          </div>
+          <div id='panel1' class='demopanel'>
+          <h1>#panel1</h1>
+          <img src="images/panel1-large.jpg" alt="panel1" />
+          </div>
+          <div id='panel2' class='demopanel'>
+          <h1>#panel2</h1>
+          <img src="images/panel2-large.jpg" alt="panel2" />
+          </div>
+          <div id='panel3' class='demopanel'>
+          <h1>#panel3</h1>
+          <img src="images/panel3-large.jpg" alt="panel3" />
+          </div>
+          <div id='panel4' class='demopanel'>
+          <h1>#panel4</h1>
+          <img src="images/panel4-large.jpg" alt="panel4" />
+          </div>
+        </div>
+       </div>
+      <div id="docwrapper">
+        <div id="docs">
+        </div>
+      </div>
+    </div>
+  </body>  
+  
+    <script type="text/javascript">
+        let logger = null;
+        let oldLog = console.log;
+        let oldError = console.error;
+        let demoSic = new SicTransit("#democontainer",".demopanel");
+        async function loadDocs(){
+          const response = await fetch("documentation.md");
+          let doctext = await response.text();
+          let demoinstance = 0;
+          doctext = doctext.replace(/```javascript[\s\S]*?```/g,function(match) {
+                      demoinstance++;
+                      return match + "\n<div class='demoresult' id='demoresult-" + demoinstance + "'></div>\n<div><button onclick='displayDemo(" + demoinstance + ")'>Demo</button></div>";
+                    });
+        let md = window.markdownit({
+              html: true
+        });
+        let html = md.render(doctext);
+        document.getElementById("docs").innerHTML = html;
+        let codeSamples = document.querySelectorAll(".language-javascript");
+        for(let i=0;i < codeSamples.length; i++){
+          // Set up editors.
+          codeSamples[i].setAttribute("contenteditable","true");
+
+          // Try to keep HTML garbage from being pasted into the code editors.
+          // If only there were a standard for contenteditable plaintext-only that worked the same across browsers...sigh.
+          codeSamples[i].addEventListener('paste', function(e) {
+            e.preventDefault();
+            let text = (e.originalEvent || e).clipboardData.getData('text/plain');
+          document.execCommand('insertText', false, text);
+          });
+
+        }
+      }
+      loadDocs();
+     
+      function returnToDocs(){
+        document.getElementById("demodiv").style.display = "none";
+        document.getElementById("docwrapper").style.display = "block";
+      }
+      function displayDemo(index){
+        document.getElementById("demodiv").style.display = "grid";
+        document.getElementById("docwrapper").style.display = "none";
+        document.getElementById("codebutton").setAttribute("index",index);
+      }
+      function runCode(){
+          // Yes, I know. We actually want to allow the execution of random code here. IN THIS CASE, it's safe. There are no credentials or cross-site issues involved.
+          let index = document.getElementById("codebutton").getAttribute("index");
+          logger = document.getElementById("demoresult-" + index);
+          let code = document.getElementById("demoresult-" + index).previousElementSibling.innerText;
+          try {
+            let codeResult = eval(code);
+            if(codeResult !== undefined){
+              console.log(codeResult) + "\n";
+            }
+            else{
+              console.log("(no errors)\n");
+            }
+
+          } catch (e) {
+            logger.innerText = e.message
+          }
+          
+        }
+        console.log = function(message) {
+          if(logger !== null){
+            if(message instanceof HTMLElement) {
+                logger.innerHTML = "[HTMLElement]";
+              }
+             else if(typeof message == 'object') {
+                logger.innerHTML = JSON.stringify(message);
+              }
+              else {
+                logger.innerHTML = message;
+              }
+          }
+        oldLog.apply(console, arguments);
+      }
+      console.error = function(message) {
+        if(logger !== null){
+            if(message instanceof HTMLElement) {
+                logger.innerHTML = "[HTMLElement]";
+              }
+             else if(typeof message == 'object') {
+                logger.innerHTML = JSON.stringify(message) + "\n";
+              }
+              else {
+                logger.innerHTML = message;
+              }
+        }
+        oldError.apply(console, arguments);
+      }
+     // displayDemo(1);
+    </script>
+ </html>
